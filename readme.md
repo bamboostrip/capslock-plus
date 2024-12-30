@@ -1,5 +1,12 @@
 English | [中文](README_zh-CN.md)
 
+
+--
+
+First and foremost, I would like to express my heartfelt thanks to the original author for their code.
+Version v0.1
+is compared to the original version, it only adds the functionality of LLM translation, using the free model of Zhipu AI's GLM-4-FLASH. If there is any infringement, please contact for deletion.
+
 ---
 
 master branch: v3.0+
