@@ -79,7 +79,7 @@ keySchemeInit_capslox(){
     if(!keyset.caps_backquote)
         keyset.caps_backquote:="keyFunc_doNothing"
     if(!keyset.caps_1)
-        keyset.caps_1:="keyFunc_winbind_activate(1)"
+        keyset.caps_1:="keyFunc_toName"
     if(!keyset.caps_2)
         keyset.caps_2:="keyFunc_winbind_activate(2)"
     if(!keyset.caps_3)
@@ -359,7 +359,7 @@ keySchemeInit_capslockPlus(){
     if(!keyset.caps_backquote)
         keyset.caps_backquote:="keyFunc_winbind_activate(9)"
     if(!keyset.caps_1)
-        keyset.caps_1:="keyFunc_winbind_activate(1)"
+        keyset.caps_1:="keyFunc_toName"
     if(!keyset.caps_2)
         keyset.caps_2:="keyFunc_winbind_activate(2)"
     if(!keyset.caps_3)

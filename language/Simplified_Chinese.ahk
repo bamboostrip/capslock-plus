@@ -34,6 +34,9 @@ global lang_llm_translating:="翻译中...  （如果网络太差，翻译请求
 global lang_llm_trans:="------------------------------------LLM翻译------------------------------------"
 global lang_llm_needKey:="请在设置中填写智谱AI的API密钥 zhipuApiKey"
 
+global lang_llm_tonamelating:="命名中...  （如果网络太差，翻译请求会暂时阻塞程序，稍等就好）"
+global lang_llm_toName:="------------------------------------LLM命名------------------------------------"
+
 global lang_settingsFileContent:=""
 lang_settingsFileContent=
 (
@@ -400,7 +403,7 @@ caps_z=keyFunc_doNothing
 caps_backquote=keyFunc_doNothing
 
 ;Capslock+0~9 -> 激活绑定窗口 0~9
-caps_1=keyFunc_winbind_activate(1)
+caps_1=keyFunc_toName
 
 caps_2=keyFunc_winbind_activate(2)
 

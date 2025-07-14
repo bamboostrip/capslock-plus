@@ -1,5 +1,5 @@
 ﻿/*
-智谱AI翻译
+智谱AI命名变量
 */
 
 #Include lib_json.ahk   	;引入json解析文件
@@ -8,21 +8,21 @@ global TransEdit,transEditHwnd,transGuiHwnd, NativeString
 global zhipuApiKey := ""
 global zhipuModel := "glm-4-flash-250414"  ; 默认模型
 
-llmTransInit:
-	global zhipuApiKey  ; 确保在函数内部可以修改全局变量
-	global zhipuModel
-	; 从配置文件中读取API密钥和模型
-	if (CLSets.TTranslate.zhipuApiKey != "")
-	{
-		zhipuApiKey := CLSets.TTranslate.zhipuApiKey
-	}
-	if (CLSets.TTranslate.model != "")
-	{
-		zhipuModel := CLSets.TTranslate.model
-	}
+; llmTransInitName:
+; 	global zhipuApiKey  ; 确保在函数内部可以修改全局变量
+; 	global zhipuModel
+; 	; 从配置文件中读取API密钥和模型
+; 	if (CLSets.TTranslate.zhipuApiKey != "")
+; 	{
+; 		zhipuApiKey := CLSets.TTranslate.zhipuApiKey
+; 	}
+; 	if (CLSets.TTranslate.model != "")
+; 	{
+; 		zhipuModel := CLSets.TTranslate.model
+; 	}
 return
 
-llmTranslate(ss){
+llmToName(ss){
 	global zhipuApiKey  ; 在函数内声明使用全局变量
 	global zhipuModel
 
@@ -42,8 +42,9 @@ llmTranslate(ss){
 		return
 	}
 
-	; 新的提示词
-	prompt := "zh-en translation of """ ss """"
+	; 变量大驼峰 小驼峰 下划线 横线 常量
+	; 修改 prompt，要求 AI 输出五种命名风格
+	prompt := "请将以下内容用于变量命名，并分别给出大驼峰、小驼峰、下划线、横线、常量（全大写下划线分隔）五种风格的英文变量名建议 """ ss """"
 
 	; 准备请求体
 	requestBody := {}
@@ -89,8 +90,8 @@ llmTranslate(ss){
 		translation := StrReplace(translation, "\r\n", "`r`n")
 		translation := StrReplace(translation, "\n", "`r`n")
 
-		; 构建显示文本
-		MsgBoxStr := ss . "`t`r`n`r`n" . lang_llm_trans . "`r`n" . translation
+		; 构建显示文本，突出五种命名风格
+		MsgBoxStr := ss . "`t`r`n`r`n" . lang_llm_toName . "`r`n" . translation
 	} catch e {
 		MsgBoxStr := e.what = "" ? lang_yd_errorNoNet : "解析错误: " . e.message
 	}

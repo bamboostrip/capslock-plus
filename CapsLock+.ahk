@@ -63,6 +63,7 @@ allowRunOnClipboardChange:=true
 
 #Include lib_ydTrans.ahk  ;有道翻译
 #Include lib_llmTrans.ahk ;智谱AI翻译
+#Include lib_ToName.ahk ;变量命名
 
 ;change dir
 #include ..\userAHK

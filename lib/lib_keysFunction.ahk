@@ -149,6 +149,21 @@ keyFunc_translate(p*){
     return
 }
 
+keyFunc_toName(p*){
+    global
+    if(CLSets.TTranslate.useLLM = 1)
+    {
+        llmToName(getSelText())
+    }
+    else
+    {
+        MsgBox, % lang_llm_needLLM
+        return
+    }
+    return
+}
+
+
 
 keyFunc_end(){
     SendInput,{End}

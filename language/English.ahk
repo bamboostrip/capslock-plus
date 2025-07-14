@@ -34,6 +34,9 @@ global lang_llm_translating:="Translating... (If the network is too bad, the tra
 global lang_llm_trans:="------------------------------------LLM Translation------------------------------------"
 global lang_llm_needKey:="Please fill in the API key of BigModel in the settings"
 
+global lang_llm_tonamelating:="Naming... (If the network is too bad, the translation request will temporarily block the program, just wait a moment)"
+global lang_llm_toName:="------------------------------------LLM Naming------------------------------------"
+
 global lang_settingsFileContent:=""
 lang_settingsFileContent=
 (
@@ -428,7 +431,7 @@ caps_z=keyFunc_doNothing
 caps_backquote=keyFunc_doNothing
 
 ; Capslock+0~9 -> Activate the Binding Windows 0~9
-caps_1=keyFunc_winbind_activate(1)
+caps_1=keyFunc_toName
 
 caps_2=keyFunc_winbind_activate(2)
 
